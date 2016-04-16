@@ -1,3 +1,9 @@
+@font-face{
+  font-family: sunshine;
+  src: url('../fonts/A little sunshine.ttf');
+
+}
+
 * {
     box-sizing: border-box;
 }
@@ -41,9 +47,8 @@ html, body {
 
 #display {
     vertical-align: middle;
-    text-align: right;
+    text-align: center;
     overflow: hidden;
-    right: 100px;
     position: relative;
     width: 360px;
     top: 15px;
@@ -51,10 +56,7 @@ html, body {
 
 #equation {
     color: white;
-    overflow: hidden;
-    height: 90px;
     line-height: 90px;
-    float: right;
 }
 
 #equation.top {
@@ -133,7 +135,8 @@ html, body {
 }
 
 .key {
-    background: #505050;
+	font-family: "sunshine" , "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    background-color: #f1c40f;
     border: 1px solid #000;
     border-width: 1px 0 0 1px;
     text-align: center;
@@ -144,7 +147,7 @@ html, body {
 }
 
 .key.press {
-    background-color: #262626;
+    background-color: #f39c12;
 }
 
 .darkblue {
@@ -156,31 +159,92 @@ html, body {
 }
 
 .equal {
-    background-color: #359f5b;
+    background-color: #2ecc71;
 }
 
 .equal.press {
-    background-color: #256f4b;
+    background-color: #27ae60;
 }
 
-/* #key_0 { background-image: url('../images/key_0.png'); } */
-#key_1 { background-image: url('../images/key_1.png'); }
-/* #key_2 { background-image: url('../images/key_2.png'); }
-#key_3 { background-image: url('../images/key_3.png'); }
-#key_4 { background-image: url('../images/key_4.png'); }
-#key_5 { background-image: url('../images/key_5.png'); }
-#key_6 { background-image: url('../images/key_6.png'); }
-#key_7 { background-image: url('../images/key_7.png'); }
-#key_8 { background-image: url('../images/key_8.png'); }
-#key_9 { background-image: url('../images/key_9.png'); }
-#key_c { background-image: url('../images/key_c.png'); }
-#key_del { background-image: url('../images/key_del.png'); }
-#key_sign { background-image: url('../images/key_sign.png'); }
-#key_div { background-image: url('../images/key_div.png'); }
-#key_mul { background-image: url('../images/key_mul.png'); }
-#key_sub { background-image: url('../images/key_sub.png'); }
-#key_add { background-image: url('../images/key_add.png'); }
-#key_dec { background-image: url('../images/key_dec.png'); }
-#key_eql { background-image: url('../images/key_equal.png'); }
-#key_bracket { background-image: url('../images/key_bracket.png'); }
- */
+
+.lives.col-1 {
+    width: 100%;
+}
+
+.lives{
+	float: left;
+	height: 94px;
+	position: relative;
+	display: block;
+	background-color: #34495e;
+	padding-left: 33px;
+
+}
+
+.heart {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  display: inline-block;
+  transform: translate(50%, 50%);
+  background: url(../images/heart.png) no-repeat;
+  background-position:-2800px 0;
+  margin-top: -60px;
+  margin-bottom: 50px;
+  margin-left: -45px;
+  
+}
+.end {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  display: inline-block;
+  transform: translate(50%, 50%);
+  background: url(../images/heart.png) no-repeat;
+  background-position:-2800px 0;
+  background-position: 0 0;
+  transition: background 1s steps(28);
+  margin-top: -60px;
+  margin-bottom: 50px;
+  margin-left: -45px;
+}
+
+
+@keyframes fave-heart {
+  0% {
+    background-position: -2800px 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.winning-container{
+  margin: 0;
+  padding: 0;
+}
+
+.winning {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #9b59b6;
+  font-size: 33px;
+  opacity: 0;
+  z-index: 999;
+  margin: 0 auto;
+  display: none;
+}
+.winning span {
+  position: relative;
+  display: block;
+  top: 40%;
+  width: 100%;
+  padding: .35em 1.6em;
+  background-color: rgba(255, 255, 255, .2);
+  text-align: center;
+  font-family: sans-serif;
+  color: #fff;
+  z-index: 9999;
+  text-shadow: 1px 1px #2c3e50;
+}

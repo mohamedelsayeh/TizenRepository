@@ -369,7 +369,7 @@ define({
             }
             clearResult();
             if (keys.indexOf(key) !== -1) {
-                pushDigits(key);
+            	celebration();
             } else if (Object.keys(operatorKeys).indexOf(key) !== -1) {
                 model.addOperator(operatorKeys[key]);
             } else if (key === 'dec') {
@@ -383,8 +383,9 @@ define({
             } else if (key === 'bracket') {
                 model.addBracket();
             }
-            if (key === 'eql' && !model.isEmpty()) {
-                calculate();
+            if (key === 'eql') {
+            	$('#heart').removeClass('heart');
+                $('#heart').addClass('end');
             }
             refreshEquation();
         }
@@ -465,6 +466,28 @@ define({
                 }
             });
         }
+        
+        function celebration() {
+        	  $('.winning').css('display','block');
+        	    $('.winning').animate({
+        	        opacity: 1,
+        	        fontSize: '33px'
+        	    }, 300);
+
+        	    setTimeout(function(){
+        	        $('.winning').animate({
+        	            opacity: 0,
+        	            fontSize: '10px'
+        	        }, 500);
+        	        
+        	        $('.winning span').animate({
+        	            top: '38%'
+        	        });
+        	    }, 1000);
+        	    setTimeout(function(){
+        	      $('.winning').css('display','none');
+        	    },1600);
+        	}
 
         /**
          * Initializes UI module.
