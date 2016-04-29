@@ -28,6 +28,10 @@ define({
     def: function main(errors, model) {
         'use strict';
 
+        var showLives = document.getElementById("lives");
+        
+        var livesCounter = 1;
+        
         /**
          * Delay after which longtap event is executed.
          * @const
@@ -171,7 +175,6 @@ define({
          */
         function clear() {
             equationElement.classList.remove('top');
-            resultValueElement.innerHTML = '';
             displayElement.classList.add('empty-result');
         }
 
@@ -291,7 +294,7 @@ define({
             var calculationResult = '';
 
             try {
-                calculationResult = model.calculate();
+                calculationResult = model.calcculate();
                 calculationResult = addSeparators(calculationResult);
                 showResult('=&nbsp;' + calculationResult);
             } catch (e) {
@@ -356,38 +359,37 @@ define({
         function processKey(key) {
             /*jshint maxcomplexity:11 */
             var keys = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-
-            if (isResultVisible()) {
-                if (
-                    Object.keys(operatorKeys).indexOf(key) === -1 &&
-                    key !== 'del' &&
-                    key !== 'eql' &&
-                    key !== 'sign'
-                ) {
-                    model.resetEquation();
-                }
-            }
-            clearResult();
-            if (keys.indexOf(key) !== -1) {
-            	celebration();
+            
+            
+            if(keys.indexOf(key) == 4){
+        		var dashesDiv = document.getElementById('equation');
+            	dashesDiv = 'e';
+            	dashesDiv += '-';
+            	dashesDiv += '-';
+            	dashesDiv += '-';
+            	dashesDiv += '-';
+        		
+        		}
+            else if (keys.indexOf(key) !== -1) {
+            	
+            	
+            	if(livesCounter <= 4){
+            		$('#heart'+livesCounter).removeClass('heart');
+                    $('#heart'+livesCounter).addClass('end');
+                    livesCounter++;
+            	}
+            	else{
+            		celebration();
+            	}
+            		
+            	
+            	
             } else if (Object.keys(operatorKeys).indexOf(key) !== -1) {
                 model.addOperator(operatorKeys[key]);
-            } else if (key === 'dec') {
-                model.addDecimal();
-            } else if (key === 'del') {
-                model.deleteLast();
-            } else if (key === 'c') {
-                model.resetEquation();
-            } else if (key === 'sign') {
-                model.changeSign();
-            } else if (key === 'bracket') {
-                model.addBracket();
             }
             if (key === 'eql') {
-            	$('#heart').removeClass('heart');
-                $('#heart').addClass('end');
+            	lostGame();
             }
-            refreshEquation();
         }
 
         /**
@@ -467,6 +469,17 @@ define({
             });
         }
         
+        function drawHearts()
+        {
+        	for (var i = 1; i <= 4; i++)
+        	{
+        	      var heart = document.createElement('div')
+        	      heart.setAttribute('class','heart');
+        	      heart.setAttribute('id','heart'+i);
+        	      showLives.appendChild(heart);
+        	 }
+        }
+        
         function celebration() {
         	  $('.winning').css('display','block');
         	    $('.winning').animate({
@@ -488,7 +501,38 @@ define({
         	      $('.winning').css('display','none');
         	    },1600);
         	}
+        
+        function lostGame() {
+      	  $('.losing').css('display','block');
+      	    $('.losing').animate({
+      	        opacity: 1,
+      	        fontSize: '33px'
+      	    }, 300);
 
+      	    setTimeout(function(){
+      	        $('.losing').animate({
+      	            opacity: 0,
+      	            fontSize: '10px'
+      	        }, 500);
+      	        
+      	        $('.losing span').animate({
+      	            top: '38%'
+      	        });
+      	    }, 1000);
+      	    setTimeout(function(){
+      	      $('.losing').css('display','none');
+      	    },1600);
+      	}
+        
+        function drawDashes()
+        {
+        	var dashesDiv = document.getElementById('equation');
+        	for (var i = 0; i < 4; i++) {
+        		dashesDiv.innerHTML += "-"
+        	}
+        	
+        }
+        
         /**
          * Initializes UI module.
          *
@@ -502,15 +546,14 @@ define({
          *
          */
         function init() {
-            resultElement = document.getElementById('result');
-            resultValueElement = document.getElementById('resultvalue');
             equationElement = document.getElementById('equation');
             displayElement = document.getElementById('display');
             bindEvents();
             // disable multitouch
             document.body.addEventListener('touchstart', filterTap, true);
             document.body.addEventListener('touchend', filterTap, true);
-            refreshEquation();
+            drawHearts();
+            drawDashes();
         }
 
         return {

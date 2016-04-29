@@ -8,7 +8,7 @@
 </Reference>
 <Reference URI="author-signature.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>KNk4WCoIfEpmKdPZFl+K3PTATQoawbqQiB3zckrurxA=</DigestValue>
+<DigestValue>4C2vPdKr99zddIQ47khQgyzrsEMXK36Vt54y+3v3KRA=</DigestValue>
 </Reference>
 <Reference URI="config.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -16,7 +16,7 @@
 </Reference>
 <Reference URI="css%2Fstyle.css">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>1HhNpnMi44bDCdqWTX1KWOQO1/V55nI1zt2mnmkmVwU=</DigestValue>
+<DigestValue>monEk90OXPY2GfCnn8RxQYWebua3szucgFVIun7VkBM=</DigestValue>
 </Reference>
 <Reference URI="fonts%2FA%20little%20sunshine.ttf">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -24,7 +24,7 @@
 </Reference>
 <Reference URI="icon.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>y+e+Q2l6lQHIJRQAD/S1WtnIb7J/oq0MNBYz4Jm9w74=</DigestValue>
+<DigestValue>bzXicGSsvsYxanUchLm+1h6w1rz1jSMRQSPxnRDbRGw=</DigestValue>
 </Reference>
 <Reference URI="images%2Fheart.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -36,7 +36,7 @@
 </Reference>
 <Reference URI="index.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>B2d7u4fKqePMmrLwCiYdhfmh2u4I6cxoDsuklCVkQFo=</DigestValue>
+<DigestValue>zmIcsiT3K91FSgOdFg+8n7dJXyGxRYXs1gAg5JNBrEM=</DigestValue>
 </Reference>
 <Reference URI="js%2Fapp.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -96,7 +96,7 @@
 </Reference>
 <Reference URI="js%2Fviews%2Fmain.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>Jr9gk6DnDmwiEcWVK0RSH9/+jo50zMAM43YjTHCHpEs=</DigestValue>
+<DigestValue>Pno0aXsNcvT8WuG0IuQuUHGxLRZZcbhBC2gF1O8m8Do=</DigestValue>
 </Reference>
 <Reference URI="lib%2Fjquery.min.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1075,9 +1075,9 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-lGLAzIz9I90bx57L1jVx/JQeUnzXVLja3aZZG+tMgDHNn3pTnkO6yUxcpOSMmeuMdE08MiaFh+/A
-lvm4n0f1st/bcS71dhivOZQmGuiH3mxTZvrY2p0pWon7DUdYT/2Xqr43uMEqFGw0KPGhp9qPpuaq
-nAxJtfThoWD62IoN5Yk=
+OvnXlwCCHvVX1AUbyE80hzBPL0mCpcwg9StFmftyj4Q+2JMZeGSM0pfR86CD29rZCtHq8moFjInP
+iCpDQWI4HzHo0dP2NzayozgWWraUyewTl7kGeVVS7JRK9jmS0rK0vToxlHu+eXDSk3Iaa2PAWzqA
+vTfF3Okt2Ncwd0yCHow=
 </SignatureValue>
 <KeyInfo>
 <X509Data>
